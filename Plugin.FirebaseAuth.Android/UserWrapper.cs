@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Firebase.Auth;
 using Firebase;
+using Android.Gms.Extensions;
 
 namespace Plugin.FirebaseAuth
 {
@@ -57,8 +58,8 @@ namespace Plugin.FirebaseAuth
         {
             try
             {
-                var result = await _user.GetIdTokenAsync(forceRefresh).ConfigureAwait(false);
-                return result.Token;
+                var result = await _user.GetIdToken(forceRefresh);
+                return result.ToString();
             }
             catch (FirebaseException e)
             {
