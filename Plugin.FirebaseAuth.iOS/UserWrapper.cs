@@ -70,7 +70,7 @@ namespace Plugin.FirebaseAuth
             try
             {
                 var wrapper = (AuthCredentialWrapper)credential;
-                var result = await _user.LinkAndRetrieveDataAsync((AuthCredential)wrapper).ConfigureAwait(false);
+                var result = await _user.LinkAsync((AuthCredential)wrapper).ConfigureAwait(false);
                 return new AuthResultWrapper(result);
             }
             catch (NSErrorException e)
@@ -84,8 +84,8 @@ namespace Plugin.FirebaseAuth
             try
             {
                 var wrapper = (AuthCredentialWrapper)credential;
-                var result = await _user.ReauthenticateAndRetrieveDataAsync((AuthCredential)wrapper).ConfigureAwait(false);
-                return new AuthResultWrapper(result);
+                await _user.ReauthenticateAsync((AuthCredential)wrapper).ConfigureAwait(false);
+                return new AuthResultWrapper(null);
             }
             catch (NSErrorException e)
             {
