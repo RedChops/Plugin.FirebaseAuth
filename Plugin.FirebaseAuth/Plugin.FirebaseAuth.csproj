@@ -7,7 +7,7 @@
         <PackageId>Plugin.FirebaseAuth</PackageId>
         <Product>$(AssemblyName) ($(TargetFramework))</Product>
         <Version>3.1.0</Version>
-        <PackageVersion>3.1.0</PackageVersion>
+        <PackageVersion>3.1.0.3</PackageVersion>
         <PackOnBuild>true</PackOnBuild>
         <NeutralLanguage>en</NeutralLanguage>
         <LangVersion>default</LangVersion>
